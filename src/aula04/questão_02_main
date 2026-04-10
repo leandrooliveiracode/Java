@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class SistemaBancario {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ContaBancaria minhaConta = new ContaBancaria("123-4", "Titular");
+        ContaBancaria contaDestino = new ContaBancaria("567-8", "Destino");
+        int opcao;
+
+        do {
+            System.out.println("\n1. Saldo | 2. Deposito | 3. Saque | 4. Transferir | 0. Sair");
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    minhaConta.consultarSaldo();
+                    break;
+                case 2:
+                    minhaConta.depositar(scanner.nextDouble());
+                    break;
+                case 3:
+                    minhaConta.sacar(scanner.nextDouble());
+                    break;
+                case 4:
+                    minhaConta.transferir(contaDestino, scanner.nextDouble());
+                    break;
+            }
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}
