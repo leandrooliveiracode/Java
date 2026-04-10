@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        cliente.nome = "João da Silva";
+
+        Vendedor vendedor = new Vendedor();
+        vendedor.nome = "Maria Oliveira";
+
+        Pedido pedido = new Pedido(1001, cliente, vendedor);
+
+        pedido.exibirResumo();
+    }
+}
