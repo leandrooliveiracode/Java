@@ -1,0 +1,28 @@
+public class class01 {
+
+    int matricula;
+    String nome;
+    double salarioBruto;
+
+    public Classe1(int matricula, String nome, double salarioBruto){
+        this.matricula = matricula;
+        this.nome = nome;
+        this.salarioBruto = salarioBruto;
+    }
+
+    public double calcularINSS(){
+        return salarioBruto * 0.15;
+    }
+
+    public double calcularSalarioLiquido(){
+        return salarioBruto - calcularINSS();
+    }
+
+    public void mostrarContraCheque(){
+        System.out.println("Matrícula: " + matricula);
+        System.out.println("Nome completo: " + nome);
+        System.out.println("Salário Bruto: " + salarioBruto);
+        System.out.println("Dedução INSS: " + calcularINSS());
+        System.out.println("Salário Líquido: " + calcularSalarioLiquido());
+    }
+}
