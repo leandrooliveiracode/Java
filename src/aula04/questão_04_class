@@ -1,0 +1,36 @@
+public class Filme {
+    public String nome;
+    public String genero;
+    public int ano;
+    public int duracao;
+    public double somaNotas;
+    public int qtdAvaliacoes;
+
+    public Filme(String nome, String genero, int ano, int duracao) {
+        this.nome = nome;
+        this.genero = genero;
+        this.ano = ano;
+        this.duracao = duracao;
+        this.somaNotas = 0.0;
+        this.qtdAvaliacoes = 0;
+    }
+
+    public void exibirDetalhes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Gênero: " + genero);
+        System.out.println("Ano: " + ano);
+        System.out.println("Duração: " + duracao + " min");
+    }
+
+    public void avaliar(int nota) {
+        if (nota >= 0 && nota <= 10) {
+            somaNotas += nota;
+            qtdAvaliacoes++;
+        }
+    }
+
+    public double calcularMediaAvaliacoes() {
+        if (qtdAvaliacoes == 0) return 0.0;
+        return somaNotas 
+    }
+}
