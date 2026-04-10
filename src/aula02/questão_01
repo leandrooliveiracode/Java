@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String r;
+
+        do {
+
+            System.out.println("Digite seu nome: ");
+            String nome = sc.nextLine();
+
+            System.out.println("Digite sua idade: ");
+            int idade = sc.nextInt();
+            sc.nextLine();
+
+            System.out.println("O seu nome é: " + nome);
+            System.out.println("A sua idade é: " + idade);
+
+            while (true) {
+                System.out.println("Digite S para repetir ou N para sair:");
+                r = sc.next();
+                sc.nextLine();
+
+                if (r.equalsIgnoreCase("S") || r.equalsIgnoreCase("N")) {
+                    break;
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.");
+                }
+            }
+
+        } while (r.equalsIgnoreCase("S"));
+
+        System.out.println("Programa encerrado.");
+        sc.close();
+    }
+}
