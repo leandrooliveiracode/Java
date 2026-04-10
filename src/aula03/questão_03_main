@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Calculadora calc = new Calculadora();
+        int opcao = -1;
+
+        while (opcao != 0) {
+            System.out.println("\nEscolha a operação desejada:");
+            System.out.println("1 - Soma");
+            System.out.println("2 - Subtração");
+            System.out.println("3 - Divisão");
+            System.out.println("4 - Multiplicação");
+            System.out.println("0 - Sair do programa");
+            System.out.print("Sua opção: ");
+
+            opcao = sc.nextInt();
+
+            if (opcao >= 1 && opcao <= 4) {
+                System.out.print("Digite o primeiro número: ");
+                double num1 = sc.nextDouble();
+
+                System.out.print("Digite o segundo número: ");
+                double num2 = sc.nextDouble();
+
+                double resultado = 0;
+                boolean erro = false;
+
+                switch (opcao) {
+                    case 1:
+                        resultado = calc.somar(num1, num2);
+                        break;
+                    case 2:
+                        resultado = calc.subtrair(num1, num2);
+                        break;
+                    case 3:
+                        resultado = calc.dividir(num1, num2);
+                        if (Double.isNaN(resultado)) {
+                            erro = true;
+                        }
+                        break;
+                    case 4:
+                        resultado = calc.multiplicar(num1, num2);
+                        break;
+                }
+
+                if (!erro) {
+                    System.out.println("\n=> O resultado é: " + resultado);
+                }
+
+            } else if (opcao != 0) {
+                System.out.println("\n=> Opção inválida! Tente novamente.");
+            }
+        }
+
+        System.out.println("\nPrograma encerrado.");
+        sc.close();
+    }
+}
