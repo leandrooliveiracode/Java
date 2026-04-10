@@ -1,0 +1,25 @@
+public class Medico {
+    public boolean trabalhaNoHospital;
+
+    public void tratarPaciente() {
+        System.out.println("Realizando tratamento básico...");
+    }
+}
+
+class ClinicoGeral extends Medico {
+    public boolean atendeEmCasa;
+
+    public void receitar() {
+        System.out.println("Prescrevendo medicação...");
+    }
+}
+
+class Cirurgiao extends Medico {
+    public void tratarPaciente() {
+        System.out.println("Realizando tratamento cirúrgico especializado...");
+    }
+
+    public void fazerIncisao() {
+        System.out.println("Realizando incisão cirúrgica...");
+    }
+}
