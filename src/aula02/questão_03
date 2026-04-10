@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Bem-vindo ao calculador de média do aluno!");
+
+        double soma = 0;
+        int quantidade = 0;
+        char resposta;
+
+        do {
+            System.out.print("Insira uma nota do aluno: ");
+            double nota = sc.nextDouble();
+
+            soma += nota;
+            quantidade++;
+
+            System.out.print("Deseja inserir outra nota? (Digite 'S' para Sim ou 'N' para Não): ");
+            resposta = sc.next().toUpperCase().charAt(0);
+
+        } while (resposta == 'S');
+
+        double media = soma / quantidade;
+
+        System.out.printf("\nMédia das notas: %.2f\n", media);
+        System.out.println("Obrigado por usar o programa!");
+
+        sc.close();
+    }
+}
