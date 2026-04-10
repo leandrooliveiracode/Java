@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class GerenciadorEstoque {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Produto produto = null;
+        int opcao;
+
+        do {
+            System.out.println("\n--- CONTROLE DE ESTOQUE ---");
+            System.out.println("1. Cadastrar produto");
+            System.out.println("2. Exibir detalhes");
+            System.out.println("3. Calcular valor total");
+            System.out.println("4. Sair");
+            System.out.print("Opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Nome: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Preço: ");
+                    double preco = scanner.nextDouble();
+                    System.out.print("Quantidade: ");
+                    int qtd = scanner.nextInt();
+                    produto = new Produto(nome, preco, qtd);
+                    break;
+                case 2:
+                    if (produto != null) {
+                        produto.exibirDetalhes();
+                    } else {
+                        System.out.println("Cadastre um produto primeiro.");
+                    }
+                    break;
+                case 3:
+                    if (produto != null) {
+                        System.out.println("Valor total em estoque: R$ " + String.format("%.2f", produto.calcularValorTotal()));
+                    } else {
+                        System.out.println("Cadastre um produto primeiro.");
+                    }
+                    break;
+            }
+        } while (opcao != 4);
+
+        scanner.close();
+    }
+}
