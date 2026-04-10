@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a matrícula: ");
+        int matricula = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Digite o nome: ");
+        String nome = sc.nextLine();
+
+        System.out.print("Digite o salário bruto: ");
+        double salarioBruto = sc.nextDouble();
+
+        Classe1 c = new Classe1(matricula, nome, salarioBruto);
+
+        System.out.println("\n----- CONTRACHEQUE -----");
+        c.mostrarContraCheque();
+    }
+}
