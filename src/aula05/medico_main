@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        ClinicoGeral clinico = new ClinicoGeral();
+        clinico.trabalhaNoHospital = true;
+        clinico.atendeEmCasa = false;
+        clinico.tratarPaciente();
+        clinico.receitar();
+        
+        Cirurgiao cirurgiao = new Cirurgiao();
+        cirurgiao.trabalhaNoHospital = true;
+        cirurgiao.tratarPaciente();
+        cirurgiao.fazerIncisao();
+
+        Medico medicoP = new Cirurgiao();
+        medicoP.tratarPaciente();
+    }
+}
