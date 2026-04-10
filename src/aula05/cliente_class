@@ -1,0 +1,25 @@
+public class Cliente {
+    public String nome;
+}
+
+public class Vendedor {
+    public String nome;
+}
+
+public class Pedido {
+    public int numero;
+    public Cliente cliente;
+    public Vendedor vendedor;
+
+    public Pedido(int numero, Cliente cliente, Vendedor vendedor) {
+        this.numero = numero;
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+    }
+
+    public void exibirResumo() {
+        System.out.println("Pedido: " + numero);
+        System.out.println("Cliente: " + cliente.nome);
+        System.out.println("Vendedor: " + vendedor.nome);
+    }
+}
