@@ -1,0 +1,39 @@
+class Funcionario {
+    private int matricula;
+    private String nome;
+    private double salario_Bruto;
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getSalario_Bruto() {
+        return salario_Bruto;
+    }
+
+    public void setSalario_Bruto(double salario_Bruto) {
+        this.salario_Bruto = salario_Bruto;
+    }
+
+    public double calcular_Inss(){
+        return salario_Bruto * 0.15;
+    }
+    public double calcularSalarioLiquido(){
+        return salario_Bruto - calcular_Inss();
+    }
+    public String exibirContracheque(){
+        return "O total a pagar no INSS é:R$" + calcular_Inss() + " e o total recebido é:R$"+calcularSalarioLiquido();
+    }
+}
