@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class SistemaStreaming {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Filme filme = null;
+        int opcao;
+
+        do {
+            System.out.println("\n- STREAMING -");
+            System.out.println("1. Cadastrar titulo");
+            System.out.println("2. Exibir detalhes");
+            System.out.println("3. Avaliar");
+            System.out.println("4. Media de avaliacoes");
+            System.out.println("5. Sair");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Nome: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Gênero: ");
+                    String gen = scanner.nextLine();
+                    System.out.print("Ano: ");
+                    int ano = scanner.nextInt();
+                    System.out.print("Duração: ");
+                    int dur = scanner.nextInt();
+                    filme = new Filme(nome, gen, ano, dur);
+                    break;
+                case 2:
+                    if (filme != null) filme.exibirDetalhes();
+                    break;
+                case 3:
+                    if (filme != null) {
+                        System.out.print("Nota (0-10): ");
+                        filme.avaliar(scanner.nextInt());
+                    }
+                    break;
+                case 4:
+                    if (filme != null) {
+                        System.out.println("Média: " + String.format("%.1f", filme.calcularMediaAvaliacoes()));
+                    }
+                    break;
+            }
+        } while (opcao != 5);
+
+        scanner.close();
+    }
+}
